@@ -5,6 +5,11 @@
 
 using namespace std;
 
+void errorFileNotOpen(char* fileName) {
+    cerr << "Error: file " << fileName << " not open\n";
+    exit(1);
+}
+
 int main(int argc, char* argv[]) {
     if(argc != 3) {
         cerr << "Error: Wrong Parameter\n";
@@ -24,7 +29,9 @@ int main(int argc, char* argv[]) {
     a = 1000, b = 1000;
 
     if(fileA.is_open()) fileA.read((char*)&a, sizeof(a));
+    else errorFileNotOpen(argv[1]);
     if(fileB.is_open()) fileB.read((char*)&b, sizeof(b));
+    else errorFileNotOpen(argv[2]);
 
     a = ntohl(a);
     b = ntohl(b);
