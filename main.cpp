@@ -6,7 +6,7 @@
 using namespace std;
 
 void errorFileNotOpen(char* fileName) {
-    cerr << "Error: file " << fileName << " not open\n";
+    cerr << "Error: file " << fileName << " not open" << endl;
     exit(1);
 }
 
