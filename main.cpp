@@ -18,8 +18,8 @@ int main(int argc, char* argv[]) {
     uint32_t a, b;
     ifstream fileA, fileB;
     
-    fileA.open(argv[1]);
-    fileB.open(argv[2]);
+    fileA.open(argv[1], std::ifstream::in bitor std::ifstream::binary);
+    fileB.open(argv[2], std::ifstream::in bitor std::ifstream::binary);
 
     a = 1000, b = 1000;
 
